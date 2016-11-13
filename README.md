@@ -1,6 +1,6 @@
 # Elancev0
 
-Demo app firebase.
+Demo Android app with [Firebase](https://firebase.google.com/).
 Log-in Google accout (Firebase-auth)
 After log-in register (new user) or confirm (old user)
 Two roles (Coach or coachee), coaches can also have a coach
