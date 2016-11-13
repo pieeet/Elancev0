@@ -38,3 +38,9 @@ captures/
 
 # Keystore files
 *.jks
+
+# Google services (Firebase)
+app/google-services.json
+
+# Mac OS X hidden files
+.DS_Store
