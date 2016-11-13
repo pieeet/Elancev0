@@ -1,0 +1,264 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:stretchColumns="1"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:padding="16dp">
+
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:text="Voornaam"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/userDetailVoornaamEditText"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textCapSentences"
+                    android:paddingLeft="30dp"
+                    android:paddingStart="30dp"
+                    android:paddingRight="10dp"
+                    android:paddingEnd="10dp"
+                    android:maxLines="1" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:text="Achternaam"
+                    android:textSize="20sp" />
+
+
+                <EditText
+                    android:id="@+id/userDetailAchternaamEditText"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="30dp"
+                    android:paddingStart="30dp"
+                    android:paddingRight="10dp"
+                    android:paddingEnd="10dp"
+                    android:inputType="textCapSentences"
+                    android:maxLines="1" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:text="Email"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/userDetailEmailEditText"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="30dp"
+                    android:paddingStart="30dp"
+                    android:paddingRight="10dp"
+                    android:paddingEnd="10dp"
+
+                    android:maxLines="1"
+                    android:inputType="textEmailAddress"/>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:text="Profielfoto"
+                    android:textSize="20sp" />
+
+                <ImageView
+                    android:id="@+id/userDetailImageView"
+                    android:layout_column="1"
+                    android:layout_width="72dp"
+                    android:layout_height="72dp"/>
+
+            </TableRow>
+
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:text="Telefoon"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/userDetailTelefoonEditText"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="30dp"
+                    android:paddingStart="30dp"
+                    android:paddingRight="10dp"
+                    android:paddingEnd="10dp"
+                    android:maxLines="1"
+                    android:inputType="phone"/>
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
+                android:id="@+id/coachTableRow">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:text="Coach"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/userDetailCoachEditText"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="30dp"
+                    android:paddingStart="30dp"
+                    android:paddingRight="10dp"
+                    android:paddingEnd="10dp"
+                    android:maxLines="1"
+                    android:focusable="false"
+                    android:inputType="none"/>
+            </TableRow>
+
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp">
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Is coach"
+                    android:id="@+id/isCoachCheckBox"
+                    android:layout_column="0"
+                    android:checked="false"
+                    android:clickable="false" />
+            </TableRow>
+
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/coacheesTitleTableRow"
+                android:layout_marginTop="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:layout_span="2"
+                    android:text="Coachees"
+                    android:textSize="20sp" />
+
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/coacheesCheckBoxesTableRow"
+                android:layout_marginTop="5dp">
+
+                <GridLayout
+                    android:id="@+id/coacheesCheckBoxLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_span="2"
+                    android:columnCount="2"/>
+            </TableRow>
+
+
+
+
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp">
+
+                <Button
+                    android:id="@+id/verwijderUserButton"
+                    android:layout_column="1"
+                    android:background="#ee7e2f"
+                    android:text="Verwijder gebruiker" />
+            </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp">
+
+                <Button
+                    android:id="@+id/updateUserButton"
+                    android:layout_column="1"
+                    android:background="#ee7e2f"
+                    android:text="Update gebruiker" />
+            </TableRow>
+
+
+
+        </TableLayout>
+
+    </ScrollView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Vul in ieder geval voornaam, achternaam en email velden in. Klik op het scherm om terug te keren naar het invoer formulier"
+        android:id="@+id/userDetailWarning"
+        android:gravity="center_vertical|center_horizontal"
+        android:background="#270303"
+        android:textColor="#f32424"
+        android:visibility="gone" />
+</FrameLayout>
+
+
+
+
+

@@ -1,0 +1,741 @@
+{
+  "Elance_2" : {
+    "Afspraken" : {
+      "-KOQGd3zbHnfQxDHlsKH" : {
+        "_id" : "-KOQGd3zbHnfQxDHlsKH",
+        "beginTijd" : 1470582049300,
+        "beschrijving" : "Test afspraak",
+        "deelnemers" : {
+          "jjansen@gmail_com" : true,
+          "p_h_devries@gmail_com" : true
+        },
+        "locatie" : "Rijksmuseum",
+        "locatieId" : "-KOMU86pAdAu4a-Gth1e"
+      },
+      "-KOQKzYcfVwaItR-3QqS" : {
+        "_id" : "-KOQKzYcfVwaItR-3QqS",
+        "beginTijd" : 1471701647548,
+        "beschrijving" : "Test 2",
+        "deelnemers" : {
+          "ghus@gmail_com" : true,
+          "p_h_devries@gmail_com" : true
+        },
+        "locatie" : "Stedelijk museum",
+        "locatieId" : "-KOMltsznTgEEiVkPE4v"
+      },
+      "-KOVSh1OBSi9rSmQTtZT" : {
+        "_id" : "-KOVSh1OBSi9rSmQTtZT",
+        "beginTijd" : 1470754838266,
+        "beschrijving" : "Test 3",
+        "deelnemers" : {
+          "ghus@gmail_com" : true,
+          "p_h_devries@gmail_com" : true
+        },
+        "locatie" : "Stedelijk museum",
+        "locatieId" : "-KOMltsznTgEEiVkPE4v"
+      },
+      "-KOVnhp3HYkHk5ISg9eI" : {
+        "_id" : "-KOVnhp3HYkHk5ISg9eI",
+        "beginTijd" : 1470495655232,
+        "beschrijving" : "test",
+        "deelnemers" : {
+          "jjansen@gmail_com" : true,
+          "p_h_devries@gmail_com" : true
+        },
+        "locatie" : "Tedt3"
+      },
+      "-KOWjN2iPiGwfBJEO4Ft" : {
+        "_id" : "-KOWjN2iPiGwfBJEO4Ft",
+        "beginTijd" : 1470517235454,
+        "beschrijving" : "hsbwjwb",
+        "deelnemers" : {
+          "jjansen@gmail_com" : true,
+          "p_h_devries@gmail_com" : true
+        },
+        "locatie" : "Twst 5"
+      },
+      "-KOWlnvGUusnYuhGZzfZ" : {
+        "_id" : "-KOWlnvGUusnYuhGZzfZ",
+        "beginTijd" : 1470517207337,
+        "beschrijving" : "test 6",
+        "deelnemers" : {
+          "jjansen@gmail_com" : true,
+          "p_h_devries@gmail_com" : true
+        },
+        "locatie" : "Stedelijk museum",
+        "locatieId" : "-KOMltsznTgEEiVkPE4v"
+      },
+      "-KOWmVKVPyzNYJC4tBx-" : {
+        "_id" : "-KOWmVKVPyzNYJC4tBx-",
+        "beginTijd" : 1470517211763,
+        "beschrijving" : "test 8",
+        "deelnemers" : {
+          "jhuisman@gmail_com" : true,
+          "p_h_devries@gmail_com" : true
+        },
+        "locatie" : "Tedt3"
+      },
+      "-KOWraF16dmYRYvo-CL8" : {
+        "_id" : "-KOWraF16dmYRYvo-CL8",
+        "beginTijd" : 1470517203708,
+        "beschrijving" : "debug",
+        "deelnemers" : {
+          "jjansen@gmail_com" : true,
+          "p_h_devries@gmail_com" : true
+        },
+        "locatie" : "Stedelijk museum",
+        "locatieId" : "-KOMltsznTgEEiVkPE4v"
+      },
+      "-KOWvorx0Tw7G1VjA2kl" : {
+        "_id" : "-KOWvorx0Tw7G1VjA2kl",
+        "beginTijd" : 1470520811418,
+        "beschrijving" : "fghgfff",
+        "deelnemers" : {
+          "jjansen@gmail_com" : true,
+          "p_h_devries@gmail_com" : true
+        },
+        "locatie" : "Stedelijk museum",
+        "locatieId" : "-KOMltsznTgEEiVkPE4v"
+      },
+      "-KOYkn_ZK26bvuaF-COJ" : {
+        "_id" : "-KOYkn_ZK26bvuaF-COJ",
+        "beginTijd" : 1472364056739,
+        "beschrijving" : "test 8",
+        "deelnemers" : {
+          "ghus@gmail_com" : true,
+          "p_h_devries@gmail_com" : true
+        },
+        "locatie" : "Twst 5"
+      },
+      "-KOYnvXzGIPWM8cLNx9W" : {
+        "_id" : "-KOYnvXzGIPWM8cLNx9W",
+        "beginTijd" : 1470553240260,
+        "beschrijving" : "test",
+        "deelnemers" : {
+          "jjansen@gmail_com" : true,
+          "p_h_devries@gmail_com" : true
+        },
+        "locatie" : "Stedelijk museum",
+        "locatieId" : "-KOMltsznTgEEiVkPE4v"
+      },
+      "-KOZ1YaYuPA1Wbymzilq" : {
+        "_id" : "-KOZ1YaYuPA1Wbymzilq",
+        "beginTijd" : 1470556831371,
+        "beschrijving" : "test",
+        "deelnemers" : {
+          "jhuisman@gmail_com" : true,
+          "p_h_devries@gmail_com" : true
+        },
+        "locatie" : "Stedelijk museum",
+        "locatieId" : "-KOMltsznTgEEiVkPE4v"
+      },
+      "-KOZ9yTlcVXljJM6SVTI" : {
+        "_id" : "-KOZ9yTlcVXljJM6SVTI",
+        "beginTijd" : 1470556822195,
+        "beschrijving" : "test",
+        "deelnemers" : {
+          "ghus@gmail_com" : true,
+          "p_h_devries@gmail_com" : true
+        },
+        "locatie" : "Stedelijk museum",
+        "locatieId" : "-KOMltsznTgEEiVkPE4v"
+      },
+      "-KO_bS2zO03rBHF4RLF9" : {
+        "_id" : "-KO_bS2zO03rBHF4RLF9",
+        "beginTijd" : 1470582055741,
+        "beschrijving" : "sieraden maken",
+        "deelnemers" : {
+          "jhuisman@gmail_com" : true,
+          "p_h_devries@gmail_com" : true
+        },
+        "locatie" : "Het sieraad"
+      },
+      "-KO_eExuVG9gdXloCjKF" : {
+        "_id" : "-KO_eExuVG9gdXloCjKF",
+        "beginTijd" : 1470582025715,
+        "beschrijving" : "hgffhjjgf",
+        "deelnemers" : {
+          "ghus@gmail_com" : true,
+          "p_h_devries@gmail_com" : true
+        },
+        "locatie" : "Pllek"
+      },
+      "-KO_kmA918T62nM9rKNS" : {
+        "_id" : "-KO_kmA918T62nM9rKNS",
+        "beginTijd" : 1470585631184,
+        "beschrijving" : "nog een test",
+        "deelnemers" : {
+          "jhuisman@gmail_com" : true,
+          "p_h_devries@gmail_com" : true
+        },
+        "locatie" : "Het sieraad",
+        "locatieId" : "-KO_SuXdgtaeBZe_sInH"
+      },
+      "-KO_s9ttHJvkjInmss3_" : {
+        "_id" : "-KO_s9ttHJvkjInmss3_",
+        "beginTijd" : 1470412811645,
+        "beschrijving" : "Atest1",
+        "deelnemers" : {
+          "jhuisman@gmail_com" : true,
+          "p_h_devries@gmail_com" : true
+        },
+        "locatie" : "Dansstudio Chassé",
+        "locatieId" : "-KO__Z93pw_bcdA3xTER"
+      },
+      "-KO_sTMbIZG1uCZbvc4g" : {
+        "_id" : "-KO_sTMbIZG1uCZbvc4g",
+        "beginTijd" : 1470412828172,
+        "beschrijving" : "Atest2",
+        "deelnemers" : {
+          "ghus@gmail_com" : true,
+          "p_h_devries@gmail_com" : true
+        },
+        "locatie" : "Dansstudio Oost",
+        "locatieId" : "-KO__ncdqsHTNAaWWd9x"
+      },
+      "-KO_uPTpHTWRECpVUqDB" : {
+        "_id" : "-KO_uPTpHTWRECpVUqDB",
+        "beginTijd" : 1470585656710,
+        "beschrijving" : "Atest2",
+        "deelnemers" : {
+          "p_h_devries@gmail_com" : true,
+          "tdejong@gmail_com" : true
+        },
+        "locatie" : "Dansstudio Oost",
+        "locatieId" : "-KO__ncdqsHTNAaWWd9x"
+      },
+      "-KOai3zUerCg7HLk05Kv" : {
+        "_id" : "-KOai3zUerCg7HLk05Kv",
+        "beginTijd" : 1470600044908,
+        "beschrijving" : "ywsyeyeysy",
+        "deelnemers" : {
+          "jhuisman@gmail_com" : true,
+          "p_h_devries@gmail_com" : true,
+          "tdejong@gmail_com" : true
+        },
+        "locatie" : "Stedelijk museum",
+        "locatieId" : "-KOMltsznTgEEiVkPE4v"
+      }
+    },
+    "Locaties" : {
+      "-KOMU86pAdAu4a-Gth1e" : {
+        "Afspraken" : {
+          "-KOQGd3zbHnfQxDHlsKH" : 1470582049300
+        },
+        "_id" : "-KOMU86pAdAu4a-Gth1e",
+        "adres" : "Museumstraat 1",
+        "naam" : "Rijksmuseum",
+        "plaats" : "Amsterdam",
+        "postcode" : "1077 XX",
+        "stadsdeel" : "Centrum",
+        "themas" : {
+          "Kunst" : true
+        }
+      },
+      "-KOMltsznTgEEiVkPE4v" : {
+        "Afspraken" : {
+          "-KOQKzYcfVwaItR-3QqS" : 1471701647548,
+          "-KOVSh1OBSi9rSmQTtZT" : 1470754838266,
+          "-KOWlnvGUusnYuhGZzfZ" : 1470517207337,
+          "-KOWraF16dmYRYvo-CL8" : 1470517203708,
+          "-KOWvorx0Tw7G1VjA2kl" : 1470520811418,
+          "-KOYnvXzGIPWM8cLNx9W" : 1470553240260,
+          "-KOZ1YaYuPA1Wbymzilq" : 1470556831371,
+          "-KOZ9yTlcVXljJM6SVTI" : 1470556822195,
+          "-KOai3zUerCg7HLk05Kv" : 1470600044908
+        },
+        "_id" : "-KOMltsznTgEEiVkPE4v",
+        "adres" : "Museumplein 1",
+        "naam" : "Stedelijk museum",
+        "plaats" : "Amsterdam",
+        "postcode" : "1045 XZ",
+        "stadsdeel" : "Centrum",
+        "themas" : {
+          "Kunst" : true
+        }
+      },
+      "-KOVanSEgZGGumiQW9fc" : {
+        "adres" : "Test",
+        "naam" : "Test1",
+        "plaats" : "Amsterdam",
+        "postcode" : "test",
+        "stadsdeel" : "West",
+        "themas" : {
+          "Carrière" : true
+        }
+      },
+      "-KOVbtPufEErBsvFb4o4" : {
+        "adres" : "Frrrrf",
+        "naam" : "Tedt3",
+        "plaats" : "Amsterdam",
+        "postcode" : "fggggf",
+        "stadsdeel" : "Oost",
+        "themas" : {
+          "Carrière" : true,
+          "Gezondheid" : true,
+          "Kunst" : true
+        }
+      },
+      "-KOWbLnfDVC-78gDipXo" : {
+        "adres" : "Twst",
+        "naam" : "Test 4",
+        "plaats" : "Amsterdam",
+        "postcode" : "twst",
+        "stadsdeel" : "West",
+        "themas" : {
+          "Carrière" : true,
+          "Gezondheid" : true
+        }
+      },
+      "-KOWbYJwB_Jz2nvj2kZM" : {
+        "adres" : "Heboeoie",
+        "naam" : "Twst 5",
+        "plaats" : "Amsterdam",
+        "postcode" : "heieeje",
+        "stadsdeel" : "Oost",
+        "themas" : {
+          "Carrière" : true,
+          "Techniek" : true
+        }
+      },
+      "-KO_Sb9puYYqfkhMztp5" : {
+        "adres" : "Ndsm 1",
+        "naam" : "Pllek",
+        "plaats" : "Amsterdam",
+        "postcode" : "",
+        "stadsdeel" : "Noord",
+        "themas" : {
+          "Gezondheid" : true
+        }
+      },
+      "-KO_SuXdgtaeBZe_sInH" : {
+        "Afspraken" : {
+          "-KO_kmA918T62nM9rKNS" : 1470585631184
+        },
+        "adres" : "Postjesweg 1",
+        "naam" : "Het sieraad",
+        "plaats" : "Amsterdam",
+        "postcode" : "1056 HG",
+        "stadsdeel" : "West",
+        "themas" : {
+          "Techniek" : true
+        }
+      },
+      "-KO__Z93pw_bcdA3xTER" : {
+        "Afspraken" : {
+          "-KO_s9ttHJvkjInmss3_" : 1470412811645
+        },
+        "adres" : "Chasséstraat 4",
+        "naam" : "Dansstudio Chassé",
+        "plaats" : "Amsterdam",
+        "postcode" : "1067 HH",
+        "stadsdeel" : "West",
+        "themas" : {
+          "Gezondheid" : true,
+          "Kunst" : true
+        }
+      },
+      "-KO__ncdqsHTNAaWWd9x" : {
+        "Afspraken" : {
+          "-KO_sTMbIZG1uCZbvc4g" : 1470412828172,
+          "-KO_uPTpHTWRECpVUqDB" : 1470585656710
+        },
+        "adres" : "Javastraat 55",
+        "naam" : "Dansstudio Oost",
+        "plaats" : "Amsterdam",
+        "postcode" : "1203 Kk",
+        "stadsdeel" : "Oost",
+        "themas" : {
+          "Gezondheid" : true,
+          "Kunst" : true
+        }
+      },
+      "-KO_auFxQKJVcD8IPb3u" : {
+        "adres" : "Sofialaan 8",
+        "naam" : "Dansstudio Zuid",
+        "plaats" : "Amsterdam",
+        "postcode" : "1253 XX",
+        "stadsdeel" : "Zuid",
+        "themas" : {
+          "Gezondheid" : true,
+          "Kunst" : true
+        }
+      },
+      "-KO_smRntxYyefLEr2ei" : {
+        "_id" : "-KO_smRntxYyefLEr2ei",
+        "adres" : "Jssjsjjs",
+        "naam" : "Atest1",
+        "plaats" : "Amsterdam",
+        "postcode" : "jejjeeje",
+        "stadsdeel" : "West",
+        "themas" : {
+          "Techniek" : true
+        }
+      },
+      "-KOaWWLkzGUL9SbZa1Zg" : {
+        "_id" : "-KOaWWLkzGUL9SbZa1Zg",
+        "adres" : "Freef 1",
+        "naam" : "Kappervakschool",
+        "plaats" : "Amsterdam",
+        "postcode" : "1234DD",
+        "stadsdeel" : "Zuid",
+        "themas" : {
+          "Carrière" : true
+        }
+      }
+    },
+    "Steden" : {
+      "Amsterdam" : {
+        "Locaties" : {
+          "-KOMU86pAdAu4a-Gth1e" : true,
+          "-KOMltsznTgEEiVkPE4v" : true,
+          "-KOVanSEgZGGumiQW9fc" : true,
+          "-KOVbtPufEErBsvFb4o4" : true,
+          "-KOWbLnfDVC-78gDipXo" : true,
+          "-KOWbYJwB_Jz2nvj2kZM" : true,
+          "-KO_Sb9puYYqfkhMztp5" : true,
+          "-KO_SuXdgtaeBZe_sInH" : true,
+          "-KO__Z93pw_bcdA3xTER" : true,
+          "-KO__ncdqsHTNAaWWd9x" : true,
+          "-KO_auFxQKJVcD8IPb3u" : true,
+          "-KO_smRntxYyefLEr2ei" : true,
+          "-KOaWWLkzGUL9SbZa1Zg" : true
+        },
+        "Stadsdelen" : {
+          "Centrum" : {
+            "Locaties" : {
+              "-KOMU86pAdAu4a-Gth1e" : true,
+              "-KOMltsznTgEEiVkPE4v" : true
+            },
+            "naam" : "Centrum"
+          },
+          "Noord" : {
+            "Locaties" : {
+              "-KO_Sb9puYYqfkhMztp5" : true
+            },
+            "naam" : "Noord"
+          },
+          "Oost" : {
+            "Locaties" : {
+              "-KOVbtPufEErBsvFb4o4" : true,
+              "-KOWbYJwB_Jz2nvj2kZM" : true,
+              "-KO__ncdqsHTNAaWWd9x" : true
+            },
+            "naam" : "Oost"
+          },
+          "West" : {
+            "Locaties" : {
+              "-KOVanSEgZGGumiQW9fc" : true,
+              "-KOWbLnfDVC-78gDipXo" : true,
+              "-KO_SuXdgtaeBZe_sInH" : true,
+              "-KO__Z93pw_bcdA3xTER" : true,
+              "-KO_smRntxYyefLEr2ei" : true
+            },
+            "naam" : "West"
+          },
+          "Zuid" : {
+            "Locaties" : {
+              "-KO_auFxQKJVcD8IPb3u" : true,
+              "-KOaWWLkzGUL9SbZa1Zg" : true
+            },
+            "naam" : "Zuid"
+          }
+        },
+        "Users" : {
+          "abrun@gmaol_co" : true,
+          "adekleine@gmail_com" : true,
+          "adereuver@gmail_com" : true,
+          "fvlerk@gmail_com" : true,
+          "fvogel@gmail_com" : true,
+          "ghus@gmail_com" : true,
+          "heehehen" : true,
+          "jhuisman@gmail_com" : true,
+          "jjansen@gmail_com" : true,
+          "jkooistra@gmail_com" : true,
+          "kmuis@gmail_com" : true,
+          "obommel@gmail_com" : true,
+          "p_h_devries@gmail_com" : true,
+          "pdegroot@hmail_com" : true,
+          "ppuk@gmail_com" : true,
+          "tdejong@gmail_com" : true,
+          "tpoes@gmail_com" : true
+        }
+      }
+    },
+    "Themas" : {
+      "Carrière" : {
+        "Locaties" : {
+          "-KOVanSEgZGGumiQW9fc" : true,
+          "-KOVbtPufEErBsvFb4o4" : true,
+          "-KOWbLnfDVC-78gDipXo" : true,
+          "-KOWbYJwB_Jz2nvj2kZM" : true,
+          "-KOaWWLkzGUL9SbZa1Zg" : true
+        },
+        "naam" : "Carrière"
+      },
+      "Gezondheid" : {
+        "Locaties" : {
+          "-KOVbtPufEErBsvFb4o4" : true,
+          "-KOWbLnfDVC-78gDipXo" : true,
+          "-KO_Sb9puYYqfkhMztp5" : true,
+          "-KO__Z93pw_bcdA3xTER" : true,
+          "-KO__ncdqsHTNAaWWd9x" : true,
+          "-KO_auFxQKJVcD8IPb3u" : true
+        },
+        "naam" : "Gezondheid"
+      },
+      "Kunst" : {
+        "Locaties" : {
+          "-KOMU86pAdAu4a-Gth1e" : true,
+          "-KOMltsznTgEEiVkPE4v" : true,
+          "-KOVbtPufEErBsvFb4o4" : true,
+          "-KO__Z93pw_bcdA3xTER" : true,
+          "-KO__ncdqsHTNAaWWd9x" : true,
+          "-KO_auFxQKJVcD8IPb3u" : true
+        },
+        "naam" : "Kunst"
+      },
+      "Techniek" : {
+        "Locaties" : {
+          "-KOWbYJwB_Jz2nvj2kZM" : true,
+          "-KO_SuXdgtaeBZe_sInH" : true,
+          "-KO_smRntxYyefLEr2ei" : true
+        },
+        "naam" : "Techniek"
+      }
+    },
+    "Users" : {
+      "abrun@gmaol_co" : {
+        "_id" : "abrun@gmaol_co",
+        "achternaam" : "Brun",
+        "email" : "abrun@gmaol.co",
+        "isAdmin" : false,
+        "isCoach" : false,
+        "naam" : "Ane",
+        "plaats" : "Amsterdam",
+        "telefoon" : "6292265226"
+      },
+      "adekleine@gmail_com" : {
+        "_id" : "adekleine@gmail_com",
+        "achternaam" : "De Kleine",
+        "email" : "adekleine@gmail.com",
+        "isAdmin" : false,
+        "isCoach" : false,
+        "naam" : "Anneke",
+        "plaats" : "Amsterdam",
+        "telefoon" : "65919461949"
+      },
+      "adereuver@gmail_com" : {
+        "_id" : "adereuver@gmail_com",
+        "achternaam" : "De Reuver",
+        "email" : "adereuver@gmail.com",
+        "isAdmin" : false,
+        "isCoach" : true,
+        "naam" : "Annie",
+        "plaats" : "Amsterdam",
+        "telefoon" : "9265659292"
+      },
+      "fvlerk@gmail_com" : {
+        "_id" : "fvlerk@gmail_com",
+        "achternaam" : "Vlerk",
+        "email" : "fvlerk@gmail.com",
+        "isAdmin" : false,
+        "isCoach" : false,
+        "naam" : "Flip",
+        "plaats" : "Amsterdam",
+        "telefoon" : "95973446894"
+      },
+      "fvogel@gmail_com" : {
+        "_id" : "fvogel@gmail_com",
+        "achternaam" : "Vogel",
+        "email" : "fvogel@gmail.com",
+        "isAdmin" : false,
+        "isCoach" : true,
+        "naam" : "Flip",
+        "plaats" : "Amsterdam",
+        "telefoon" : "9497646499"
+      },
+      "ghus@gmail_com" : {
+        "_id" : "ghus@gmail_com",
+        "achternaam" : "Hus",
+        "afspraken" : {
+          "-KOQKzYcfVwaItR-3QqS" : 1471701647548,
+          "-KOVSh1OBSi9rSmQTtZT" : 1470754838266,
+          "-KOYkn_ZK26bvuaF-COJ" : 1472364056739,
+          "-KOZ9yTlcVXljJM6SVTI" : 1470556822195,
+          "-KO_eExuVG9gdXloCjKF" : 1470582025715,
+          "-KO_sTMbIZG1uCZbvc4g" : 1470412828172
+        },
+        "coachId" : "p_h_devries@gmail_com",
+        "email" : "ghus@gmail.com",
+        "isAdmin" : false,
+        "isCoach" : false,
+        "naam" : "Guss",
+        "plaats" : "Amsterdam",
+        "telefoon" : "64634486764"
+      },
+      "heehehen" : {
+        "_id" : "heehehen",
+        "achternaam" : "Hwehhw",
+        "email" : "heehehen",
+        "isAdmin" : false,
+        "isCoach" : true,
+        "naam" : "Hshs HB",
+        "plaats" : "Amsterdam",
+        "telefoon" : "844056594"
+      },
+      "jhuisman@gmail_com" : {
+        "_id" : "jhuisman@gmail_com",
+        "achternaam" : "Huisman",
+        "afspraken" : {
+          "-KOWmVKVPyzNYJC4tBx-" : 1470517211763,
+          "-KOZ1YaYuPA1Wbymzilq" : 1470556831371,
+          "-KO_bS2zO03rBHF4RLF9" : 1470582055741,
+          "-KO_kmA918T62nM9rKNS" : 1470585631184,
+          "-KO_s9ttHJvkjInmss3_" : 1470412811645,
+          "-KOai3zUerCg7HLk05Kv" : 1470600044908
+        },
+        "coachId" : "p_h_devries@gmail_com",
+        "email" : "jhuisman@gmail.com",
+        "isAdmin" : false,
+        "isCoach" : false,
+        "naam" : "Joke",
+        "plaats" : "Amsterdam",
+        "telefoon" : "0665423188"
+      },
+      "jjansen@gmail_com" : {
+        "_id" : "jjansen@gmail_com",
+        "achternaam" : "Jansen",
+        "afspraken" : {
+          "-KOQGd3zbHnfQxDHlsKH" : 1470582049300,
+          "-KOVnhp3HYkHk5ISg9eI" : 1470495655232,
+          "-KOWjN2iPiGwfBJEO4Ft" : 1470517235454,
+          "-KOWlnvGUusnYuhGZzfZ" : 1470517207337,
+          "-KOWraF16dmYRYvo-CL8" : 1470517203708,
+          "-KOWvorx0Tw7G1VjA2kl" : 1470520811418,
+          "-KOYnvXzGIPWM8cLNx9W" : 1470553240260
+        },
+        "coachId" : "p_h_devries@gmail_com",
+        "email" : "jjansen@gmail.com",
+        "isAdmin" : false,
+        "isCoach" : false,
+        "naam" : "Jan",
+        "plaats" : "Amsterdam",
+        "telefoon" : "+31612345678"
+      },
+      "jkooistra@gmail_com" : {
+        "_id" : "jkooistra@gmail_com",
+        "achternaam" : "Kooistra",
+        "email" : "jkooistra@gmail.com",
+        "isAdmin" : false,
+        "isCoach" : false,
+        "naam" : "Janne",
+        "plaats" : "Amsterdam",
+        "telefoon" : "956464841646"
+      },
+      "kmuis@gmail_com" : {
+        "_id" : "kmuis@gmail_com",
+        "achternaam" : "Muis",
+        "email" : "kmuis@gmail.com",
+        "isAdmin" : false,
+        "isCoach" : false,
+        "naam" : "Karin",
+        "plaats" : "Amsterdam",
+        "telefoon" : "65986538989"
+      },
+      "obommel@gmail_com" : {
+        "_id" : "obommel@gmail_com",
+        "achternaam" : "Bommel",
+        "email" : "obommel@gmail.com",
+        "isAdmin" : false,
+        "isCoach" : false,
+        "naam" : "Ollie B.",
+        "plaats" : "Amsterdam",
+        "telefoon" : "94876646679"
+      },
+      "p_h_devries@gmail_com" : {
+        "_id" : "p_h_devries@gmail_com",
+        "achternaam" : "De Vries",
+        "afspraken" : {
+          "-KOQGd3zbHnfQxDHlsKH" : 1470582049300,
+          "-KOQKzYcfVwaItR-3QqS" : 1471701647548,
+          "-KOVSh1OBSi9rSmQTtZT" : 1470754838266,
+          "-KOVnhp3HYkHk5ISg9eI" : 1470495655232,
+          "-KOWjN2iPiGwfBJEO4Ft" : 1470517235454,
+          "-KOWlnvGUusnYuhGZzfZ" : 1470517207337,
+          "-KOWmVKVPyzNYJC4tBx-" : 1470517211763,
+          "-KOWraF16dmYRYvo-CL8" : 1470517203708,
+          "-KOWvorx0Tw7G1VjA2kl" : 1470520811418,
+          "-KOYkn_ZK26bvuaF-COJ" : 1472364056739,
+          "-KOYnvXzGIPWM8cLNx9W" : 1470553240260,
+          "-KOZ1YaYuPA1Wbymzilq" : 1470556831371,
+          "-KOZ9yTlcVXljJM6SVTI" : 1470556822195,
+          "-KO_bS2zO03rBHF4RLF9" : 1470582055741,
+          "-KO_eExuVG9gdXloCjKF" : 1470582025715,
+          "-KO_kmA918T62nM9rKNS" : 1470585631184,
+          "-KO_s9ttHJvkjInmss3_" : 1470412811645,
+          "-KO_sTMbIZG1uCZbvc4g" : 1470412828172,
+          "-KO_uPTpHTWRECpVUqDB" : 1470585656710,
+          "-KOai3zUerCg7HLk05Kv" : 1470600044908
+        },
+        "coachees" : {
+          "ghus@gmail_com" : true,
+          "jhuisman@gmail_com" : true,
+          "jjansen@gmail_com" : true,
+          "tdejong@gmail_com" : true
+        },
+        "email" : "p.h.devries@gmail.com",
+        "isAdmin" : false,
+        "isCoach" : true,
+        "naam" : "Piet",
+        "plaats" : "Amsterdam",
+        "telefoon" : "0634366699"
+      },
+      "pdegroot@hmail_com" : {
+        "_id" : "pdegroot@hmail_com",
+        "achternaam" : "De Groot",
+        "email" : "pdegroot@hmail.com",
+        "isAdmin" : false,
+        "isCoach" : false,
+        "naam" : "Peter",
+        "plaats" : "Amsterdam",
+        "telefoon" : "94843764494"
+      },
+      "ppuk@gmail_com" : {
+        "_id" : "ppuk@gmail_com",
+        "achternaam" : "Puk",
+        "email" : "ppuk@gmail.com",
+        "isAdmin" : false,
+        "isCoach" : false,
+        "naam" : "Pietje",
+        "plaats" : "Amsterdam",
+        "telefoon" : "618434618849"
+      },
+      "tdejong@gmail_com" : {
+        "_id" : "tdejong@gmail_com",
+        "achternaam" : "De Jong",
+        "afspraken" : {
+          "-KO_uPTpHTWRECpVUqDB" : 1470585656710,
+          "-KOai3zUerCg7HLk05Kv" : 1470600044908
+        },
+        "coachId" : "p_h_devries@gmail_com",
+        "email" : "tdejong@gmail.com",
+        "isAdmin" : false,
+        "isCoach" : false,
+        "naam" : "Tarela",
+        "plaats" : "Amsterdam",
+        "telefoon" : "916462959416"
+      },
+      "tpoes@gmail_com" : {
+        "_id" : "tpoes@gmail_com",
+        "achternaam" : "Poes",
+        "email" : "tpoes@gmail.com",
+        "isAdmin" : false,
+        "isCoach" : false,
+        "naam" : "Tom",
+        "plaats" : "Amsterdam",
+        "telefoon" : "6285653156"
+      }
+    }
+  }
+}

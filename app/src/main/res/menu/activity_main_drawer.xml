@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:title="Home" />
+        <item
+            android:id="@+id/nav_users"
+            android:title="Gebruikers" />
+        <item
+            android:id="@+id/nav_afspraken"
+            android:title="Afspraken" />
+
+        <item
+            android:id="@+id/nav_attracties"
+            android:title="Locaties" />
+
+        <!--<item-->
+            <!--android:id="@+id/nav_new_user"-->
+            <!--android:title="Nieuwe gebruiker" />-->
+
+    </group>
+
+
+
+</menu>

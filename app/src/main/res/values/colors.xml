@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#DEA2C3</color>
+    <color name="colorPrimaryDark">#d78eb6</color>
+    <color name="colorAccent">#ff1a1a</color>
+    <color name="elance_pink">#F9E5EC</color>
+    <color name="sidebar_text">#3d2202</color>
+</resources>

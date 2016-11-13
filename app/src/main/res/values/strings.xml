@@ -1,0 +1,86 @@
+<resources>
+    <string name="app_name">Elance demo</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+
+    <!--Menu items-->
+    <string name="action_add_afspraak">Nieuwe afspraak</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_zoek_coachees">Zoek coachee</string>
+    <string name="action_log_uit">Log uit</string>
+
+
+    <string name="welkom_fragment">Welkom bij elance</string>
+
+    <!--Wachten op data boodschap-->
+    <string name="downloadingMessage">Data wordt opgehaald…</string>
+
+    <!--stad preference-->
+    <string name="KEY_NAAM_STAD" translatable="false">naam_stad</string>
+    <string name="DEFAULT_NAAM_STAD" translatable="false">Amsterdam</string>
+
+
+    <!--_id preference-->
+    <string name="KEY_USER_ID" translatable="false">user_id</string>
+    <string name="USER_DEFAULT_ID" translatable="false">id1</string>
+
+
+    <!--Firebase constanten-->
+    <string name="DATABASE_ROOT_REF" translatable="false">Elance</string>
+    <string name="NODE_STAD" translatable="false">Stad</string>
+    <string name="NODE_VALUES" translatable="false">values</string>
+    <string name="NODE_STEDEN" translatable="false">Steden</string>
+    <string name="NODE_STADSDELEN" translatable="false">stadsdelen</string>
+    <string name="NODE_STADSDEEL" translatable="false">Stadsdeel</string>
+
+
+    <!--*****USERS*****-->
+    <string name="app_bar_titel_users">Gebruikers</string>
+    <string name="NODE_USERS" translatable="false">Users</string>
+    <string name="NODE_COACHEES" translatable="false">Coachees</string>
+    <string name="NODE_COACH" translatable="false">coachId</string>
+    <string name="NODE_IS_COACH" translatable="false">isCoach</string>
+    <string name="NODE_IS_ADMIN" translatable="false">isAdmin</string>
+    <string name="NODE_PROFIEL_ID" translatable="false">profielId</string>
+
+    <!--NIEUWE GEBRUIKER-->
+    <string name="app_bar_titel_new_user">Nieuwe gebruiker</string>
+
+    <!--******ATTRACTIES********-->
+    <string name="app_bar_titel_attracties">Attracties</string>
+    <string name="NODE_ATTRACTIES" translatable="false">Attracties</string>
+    <string name="DEFAULT_WAARDE_STADSDEEL" translatable="false">Alle stadsdelen</string>
+    <string name="DEFAULT_WAARDE_THEMA" translatable="false">Alle thema\'s</string>
+    <string name="NODE_THEMAS" translatable="false">Themas</string>
+
+    <!--*********PROFIELEN*************-->
+    <string name="NODE_PROFIELEN" translatable="false">Profielen</string>
+
+    <!--*********AFSPRAKEN*************-->
+    <string name="NODE_AFSPRAKEN" translatable="false">Afspraken</string>
+    <string name="NODE_DEELNEMERS" translatable="false">Deelnemers</string>
+    <string name="AFSPRAAK_BEVESTIGD" translatable="false">confirmed</string>
+    <string name="AFSPRAAK_PENDING" translatable="false">pending</string>
+    <string name="app_bar_titel_afspraken">Afspraken</string>
+    <string name="app_bar_titel_nieuwe_afspraak">Nieuwe afspraak</string>
+    <string name="KEY_BEGINTIJD" translatable="false">beginTijd</string>
+    <string name="knop_update_afspraak">Update afspraak</string>
+
+    <!--*********Nieuwe gebruiker *************-->
+    <string name="knop_bevestig">Bevestig</string>
+
+
+    <string name="text_loading">Laden…</string>
+
+
+    <string-array name="USER_SPINNER_ITEMS">
+        <item>Alle gebruikers</item>
+        <item>Coaches</item>
+    </string-array>
+
+
+
+
+</resources>

@@ -1,0 +1,222 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:stretchColumns="1"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:padding="16dp">
+
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp">
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:text="Locatie"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/locatieEditText"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:drawableRight="@drawable/location_icon_30"
+                    android:drawableEnd="@drawable/location_icon_30"
+                    android:drawablePadding="8dp"
+                    android:focusable="false"
+                    android:inputType="none"
+                    android:paddingLeft="30dp"
+                    android:paddingStart="30dp"
+                    android:paddingRight="10dp"
+                    android:paddingEnd="10dp"
+                    android:maxLines="1" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp">
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:text="Datum"
+                    android:textSize="20sp" />
+
+
+                <EditText
+                    android:id="@+id/datumEditText"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:drawableRight="@drawable/calendar_icon_30"
+                    android:drawableEnd="@drawable/calendar_icon_30"
+                    android:drawablePadding="8dp"
+                    android:focusable="false"
+                    android:inputType="none"
+                    android:paddingLeft="30dp"
+                    android:paddingStart="30dp"
+                    android:paddingRight="10dp"
+                    android:paddingEnd="10dp"
+                    android:maxLines="1" />
+
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp">
+
+                <TextView
+                    android:id="@+id/textView5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:text="Tijd"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/timeEditText"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:drawableRight="@drawable/timer_icon_30"
+                    android:drawableEnd="@drawable/timer_icon_30"
+                    android:drawablePadding="8dp"
+                    android:focusable="false"
+                    android:inputType="none"
+                    android:paddingLeft="30dp"
+                    android:paddingStart="30dp"
+                    android:paddingRight="10dp"
+                    android:paddingEnd="10dp"
+                    android:maxLines="1" />
+
+
+            </TableRow>
+
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp">
+
+                <TextView
+                    android:id="@+id/textView0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:text="Deelnemers"
+                    android:textSize="20sp" />
+
+                <LinearLayout
+                    android:id="@+id/checkBoxLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                </LinearLayout>
+
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp">
+
+                <TextView
+                    android:id="@+id/textView1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:text="Beschrijving"
+                    android:textSize="20sp"
+                    android:paddingRight="10dp"
+                    android:paddingEnd="10dp"
+                    android:paddingLeft="10dp"
+                    android:paddingStart="10dp"/>
+
+                <EditText
+                    android:id="@+id/beschrijvingEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:maxLines="5"
+                    android:layout_column="1" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp">
+
+                <Button
+                    android:id="@+id/maakAfspraakButton"
+                    android:layout_column="1"
+                    android:background="#ee7e2f"
+                    android:text="Maak afspraak" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp">
+
+                <Button
+                    android:id="@+id/verwijderAfspraakButton"
+                    android:layout_column="1"
+                    android:background="#ee7e2f"
+                    android:text="Verwijder afspraak"
+                    android:visibility="gone" />
+            </TableRow>
+
+
+        </TableLayout>
+
+    </ScrollView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Vul verpliche velden in. Klik op het scherm om terug te keren naar het invoer formulier"
+        android:id="@+id/warning"
+        android:gravity="center_vertical|center_horizontal"
+        android:background="#270303"
+        android:textColor="#f32424"
+        android:visibility="gone" />
+    
+</FrameLayout>
+
+
+
+
+

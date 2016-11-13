@@ -1,0 +1,175 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:stretchColumns="1"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:padding="16dp">
+
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp">
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:text="Voornaam"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/voornaamEditText"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textCapSentences"
+                    android:paddingLeft="30dp"
+                    android:paddingStart="30dp"
+                    android:paddingRight="10dp"
+                    android:paddingEnd="10dp"
+                    android:maxLines="1" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp">
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:text="Achternaam"
+                    android:textSize="20sp" />
+
+
+                <EditText
+                    android:id="@+id/achternaamEditText"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="30dp"
+                    android:paddingStart="30dp"
+                    android:paddingRight="10dp"
+                    android:paddingEnd="10dp"
+                    android:inputType="textCapSentences"
+                    android:maxLines="1" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp">
+
+                <TextView
+                    android:id="@+id/textView5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:text="Email"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/emailEditText"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="30dp"
+                    android:paddingStart="30dp"
+                    android:paddingRight="10dp"
+                    android:paddingEnd="10dp"
+
+                    android:inputType="textEmailAddress"
+                    android:maxLines="1" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp">
+
+                <TextView
+                    android:id="@+id/textView6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:text="Telefoon"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/telefoonEditText"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="30dp"
+                    android:paddingStart="30dp"
+                    android:paddingRight="10dp"
+                    android:paddingEnd="10dp"
+                    android:inputType="phone"
+                    android:maxLines="1" />
+            </TableRow>
+
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp">
+
+
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Is coach"
+                    android:id="@+id/isCoachCheckBox"
+                    android:layout_column="0"
+                    android:checked="false" />
+            </TableRow>
+
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp">
+
+                <Button
+                    android:id="@+id/maakUserButton"
+                    android:layout_column="1"
+                    android:background="#ee7e2f"
+                    android:text="Maak gebruiker" />
+            </TableRow>
+
+
+        </TableLayout>
+
+    </ScrollView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Vul in ieder geval voornaam, achternaam en email velden in. Klik op het scherm om terug te keren naar het invoer formulier"
+        android:id="@+id/warning"
+        android:gravity="center_vertical|center_horizontal"
+        android:background="#270303"
+        android:textColor="#f32424"
+        android:visibility="gone" />
+</FrameLayout>
+
+
+
+
+
