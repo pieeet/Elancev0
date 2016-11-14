@@ -334,7 +334,6 @@ public class LocatieDetailFragment extends BaseFragment {
 
     private void haalStadsdelen() {
         mDatabase
-                .child(FB_ROOT)
                 .child(FB_STEDEN)
                 .child(naamStad)
                 .child(FB_STADSDELEN).addListenerForSingleValueEvent(new ValueEventListener() {
@@ -359,7 +358,6 @@ public class LocatieDetailFragment extends BaseFragment {
 
     private void haalThemas() {
         mDatabase
-                .child(FB_ROOT)
                 .child(FB_THEMAS).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {

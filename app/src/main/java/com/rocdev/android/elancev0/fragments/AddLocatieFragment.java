@@ -294,8 +294,7 @@ public class AddLocatieFragment extends BaseFragment {
     }
 
     private void haalStadsdelen() {
-        mDatabase.child(FB_ROOT)
-                .child(FB_STEDEN)
+        mDatabase.child(FB_STEDEN)
                 .child(naamStad)
                 .child(FB_STADSDELEN).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
