@@ -153,11 +153,11 @@ public class AfsprakenActivity extends BaseSideNavActivity
     public void onInitNieuweAttractie() {
         if (isTwoPane) {
             fragmentManager.beginTransaction()
-                    .replace(R.id.content_pane_right, AddLocatieFragment.newInstance())
+                    .replace(R.id.content_pane_right, AddLocatieFragment.newInstance(null))
                     .addToBackStack(null)
                     .commit();
         } else {
-            changeFragmentAddToBackstack(AddLocatieFragment.newInstance());
+            changeFragmentAddToBackstack(AddLocatieFragment.newInstance(null));
         }
     }
 
@@ -264,6 +264,9 @@ public class AfsprakenActivity extends BaseSideNavActivity
             admin.addLocatie(locatie);
         }
     }
+
+    @Override
+    public void deleteLocatie(Locatie locatie) {}
 
     @Override
     public void onBackPressed() {

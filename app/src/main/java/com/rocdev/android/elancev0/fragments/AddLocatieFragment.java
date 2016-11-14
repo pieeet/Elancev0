@@ -2,6 +2,7 @@ package com.rocdev.android.elancev0.fragments;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -43,6 +44,9 @@ public class AddLocatieFragment extends BaseFragment {
     Spinner stadsdeelSpinner;
     GridLayout checkBoxLayout;
     Button maakLocatieButton;
+    Button deleteLocatieButton;
+
+    Locatie locatie;
 
 
     ArrayList<String> stadsdelen;
@@ -75,14 +79,23 @@ public class AddLocatieFragment extends BaseFragment {
 
      * @return A new instance of fragment AddLocatieFragment.
      */
-    public static AddLocatieFragment newInstance() {
-        return new AddLocatieFragment();
+    public static AddLocatieFragment newInstance(@Nullable Locatie locatie) {
+        AddLocatieFragment fragment = new AddLocatieFragment();
+        if (locatie != null) {
+            Bundle args = new Bundle();
+            args.putParcelable(KEY_LOCATIE, locatie);
+            fragment.setArguments(args);
+        }
+
+        return fragment;
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        if (getArguments() != null) {
+            locatie = getArguments().getParcelable(KEY_LOCATIE);
+        }
         if (savedInstanceState != null) {
             stadsdelen = savedInstanceState.getStringArrayList(KEY_STADSDELEN);
             themas = savedInstanceState.getStringArrayList(KEY_THEMAS);
@@ -92,14 +105,22 @@ public class AddLocatieFragment extends BaseFragment {
         } else {
             stadsdelen = new ArrayList<>();
             themas = new ArrayList<>();
-            actualWaardeStadsdeel = DEFAULT_STADSDEEL;
+            if (locatie == null) {
+                actualWaardeStadsdeel = DEFAULT_STADSDEEL;
+            } else {
+                actualWaardeStadsdeel = locatie.getStadsdeel();
+            }
         }
 
     }
 
     @Override
     public void setTitle() {
-
+        if (locatie != null) {
+            title = locatie.getNaam();
+        } else {
+            title = "Nieuwe locatie";
+        }
     }
 
 
@@ -137,10 +158,21 @@ public class AddLocatieFragment extends BaseFragment {
             maakThemaCheckBoxen();
         }
         maakLocatieButton = (Button) v.findViewById(R.id.maakLocatieButton);
+        deleteLocatieButton = (Button) v.findViewById(R.id.verwijderLocatieButton);
+        if (locatie != null) {
+            naamEditText.setText(locatie.getNaam());
+            adresEditText.setText(locatie.getAdres());
+            postcodeEditText.setText(locatie.getPostcode());
+            plaatsEditText.setText(locatie.getPlaats());
+            maakLocatieButton.setText("Update locatie");
+            deleteLocatieButton.setVisibility(View.VISIBLE);
+        }
         stadsdeelAdapter = new ArrayAdapter<>(getActivity(),
                 R.layout.layout_spinner, stadsdelen);
         stadsdeelAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
         stadsdeelSpinner.setAdapter(stadsdeelAdapter);
+
         if (!actualWaardeStadsdeel.equals(DEFAULT_STADSDEEL)) {
             for (int i = 0; i < stadsdelen.size(); i++) {
                 if (stadsdelen.get(i).equals(actualWaardeStadsdeel)) {
@@ -154,6 +186,17 @@ public class AddLocatieFragment extends BaseFragment {
         if (stadsdelen.isEmpty()) {
             stadsdelen.add(DEFAULT_STADSDEEL);
             haalStadsdelen();
+        } else {
+            setStadsdeelSpinnerItem();
+        }
+    }
+
+    private void setStadsdeelSpinnerItem() {
+        for (int i = 0; i < stadsdelen.size(); i++) {
+            if (stadsdelen.get(i).equals(actualWaardeStadsdeel)) {
+                stadsdeelSpinner.setSelection(i);
+                break;
+            }
         }
     }
 
@@ -161,8 +204,19 @@ public class AddLocatieFragment extends BaseFragment {
         checkBoxes = new CheckBox[themas.size()];
         if (checkBoxesSelected == null) {
             checkBoxesSelected = new int[themas.size()];
-            for (int i = 0; i < checkBoxesSelected.length; i++) {
-                checkBoxesSelected[i] = NOT_SELECTED;
+            if (locatie != null) {
+                for (int i = 0; i < themas.size(); i++) {
+                    String thema = themas.get(i);
+                    for (String themaKey: locatie.getThemas().keySet()) {
+                        if (themaKey.equals(thema)) {
+                            checkBoxesSelected[i] = SELECTED;
+                        }
+                    }
+                }
+            } else {
+                for (int i = 0; i < checkBoxesSelected.length; i++) {
+                    checkBoxesSelected[i] = NOT_SELECTED;
+                }
             }
         }
         for (Integer i = 0; i < themas.size(); i++) {
@@ -203,9 +257,7 @@ public class AddLocatieFragment extends BaseFragment {
             }
 
             @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
+            public void onNothingSelected(AdapterView<?> parent) {}
         });
 
         warning.setOnClickListener(new View.OnClickListener() {
@@ -214,29 +266,23 @@ public class AddLocatieFragment extends BaseFragment {
                 warning.setVisibility(View.GONE);
             }
         });
-
-
         maakLocatieButton.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
-                Locatie locatie = new Locatie();
+                if (locatie == null) {
+                    locatie = new Locatie();
+                }
                 String naam = naamEditText.getText().toString();
-                locatie.setNaam(naam);
                 String adres = adresEditText.getText().toString();
-                locatie.setAdres(adres);
                 String postcode = postcodeEditText.getText().toString();
-                locatie.setPostcode(postcode);
                 String plaats = plaatsEditText.getText().toString();
-                locatie.setPlaats(plaats);
-                locatie.setStadsdeel(actualWaardeStadsdeel);
                 HashMap<String, Boolean> themasMap = new HashMap<>();
                 for (int i = 0; i < checkBoxesSelected.length; i++) {
                     if (checkBoxesSelected[i] == SELECTED) {
                         themasMap.put(themas.get(i), true);
                     }
                 }
-                locatie.setThemas(themasMap);
 
                 //check op benodigde invoer
                 if (naam.equals("")
@@ -246,19 +292,29 @@ public class AddLocatieFragment extends BaseFragment {
                     warning.setVisibility(View.VISIBLE);
                 //bewaar de locatie
                 } else {
-                    bewaarLocatie(locatie);
+                    if (mListener != null) {
+                        locatie.setNaam(naam);
+                        locatie.setAdres(adres);
+                        locatie.setPostcode(postcode);
+                        locatie.setThemas(themasMap);
+                        locatie.setPlaats(plaats);
+                        locatie.setStadsdeel(actualWaardeStadsdeel);
+                        mListener.bewaarLocatie(locatie);
+                    }
+                }
+            }
+        });
+
+        deleteLocatieButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (mListener != null) {
+                    mListener.deleteLocatie(locatie);
                 }
             }
         });
     }
 
-
-
-    public void bewaarLocatie(Locatie attractie) {
-        if (mListener != null) {
-            mListener.bewaarLocatie(attractie);
-        }
-    }
 
     @Override
     public void onAttach(Context context) {
@@ -288,8 +344,8 @@ public class AddLocatieFragment extends BaseFragment {
      * >Communicating with Other Fragments</a> for more information.
      */
     public interface OnAddAttractieFragmentInteractionListener {
-        // TODO: Update argument type and name
         void bewaarLocatie(Locatie attractie);
+        void deleteLocatie(Locatie locatie);
 
     }
 
@@ -306,13 +362,12 @@ public class AddLocatieFragment extends BaseFragment {
                         stadsdelen.add(stadsdeel.getKey());
                     }
                     stadsdeelAdapter.notifyDataSetChanged();
+                    setStadsdeelSpinnerItem();
                 }
             }
 
             @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-            }
+            public void onCancelled(DatabaseError databaseError) {}
         });
     }
 
@@ -330,15 +385,8 @@ public class AddLocatieFragment extends BaseFragment {
             }
 
             @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-            }
+            public void onCancelled(DatabaseError databaseError) {}
         });
-
     }
-
-
-
-
 
 }

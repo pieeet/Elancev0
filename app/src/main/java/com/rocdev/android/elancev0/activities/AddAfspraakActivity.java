@@ -51,9 +51,10 @@ public class AddAfspraakActivity extends BaseActivity implements
     }
 
     @Override
-    public void bewaarLocatie(Locatie attractie) {
+    public void bewaarLocatie(Locatie attractie) {}
 
-    }
+    @Override
+    public void deleteLocatie(Locatie locatie) {}
 
     @Override
     public void onAttractieSelected(Locatie locatie) {

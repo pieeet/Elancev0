@@ -6,7 +6,6 @@ import android.support.v4.app.Fragment;
 
 import com.rocdev.android.elancev0.R;
 import com.rocdev.android.elancev0.fragments.AddLocatieFragment;
-import com.rocdev.android.elancev0.fragments.LocatieDetailFragment;
 import com.rocdev.android.elancev0.fragments.LocatiesFragment;
 import com.rocdev.android.elancev0.models.Locatie;
 
@@ -21,14 +20,13 @@ import com.rocdev.android.elancev0.models.Locatie;
 
 public class LocatiesActivity extends BaseSideNavActivity implements
         LocatiesFragment.OnAttractiesFragmentInteractionListener,
-        AddLocatieFragment.OnAddAttractieFragmentInteractionListener,
-        LocatieDetailFragment.OnAttractieDetailFragmentInteractionListener
+        AddLocatieFragment.OnAddAttractieFragmentInteractionListener
 
 {
 
     private LocatiesFragment locatiesFragment;
     private AddLocatieFragment addLocatieFragment;
-    private LocatieDetailFragment locatieDetailFragment;
+    private AddLocatieFragment locatieDetailFragment;
 
     private String fragmentTitle;
 
@@ -80,7 +78,7 @@ public class LocatiesActivity extends BaseSideNavActivity implements
             }
             clearRightFragment();
 
-            locatieDetailFragment = LocatieDetailFragment.newInstance(attractie);
+            locatieDetailFragment = AddLocatieFragment.newInstance(attractie);
             fragmentManager
                     .beginTransaction()
                     .replace(R.id.content_pane_right, locatieDetailFragment)
@@ -102,7 +100,7 @@ public class LocatiesActivity extends BaseSideNavActivity implements
     @Override
     public void onInitNieuweAttractie() {
         if (isTwoPane) {
-            addLocatieFragment = AddLocatieFragment.newInstance();
+            addLocatieFragment = AddLocatieFragment.newInstance(null);
             fragmentManager
                     .beginTransaction()
                     .replace(R.id.content_pane_right, addLocatieFragment)
@@ -124,14 +122,14 @@ public class LocatiesActivity extends BaseSideNavActivity implements
 
     }
 
-    @Override
-    public void updateLocatie(Locatie attractie) {
-        if (isTwoPane) {
-            admin.addLocatie(attractie);
-            clearRightFragment();
-            toolbar.setTitle(fragmentTitle);
-        }
-    }
+//    @Override
+//    public void updateLocatie(Locatie attractie) {
+//        if (isTwoPane) {
+//            admin.addLocatie(attractie);
+//            clearRightFragment();
+//            toolbar.setTitle(fragmentTitle);
+//        }
+//    }
 
     @Override
     public void deleteLocatie(Locatie locatie) {

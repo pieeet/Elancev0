@@ -19,7 +19,7 @@ public class AddLocatieActivity extends BaseActivity implements
         super.onCreate(savedInstanceState);
         setContentView(LAYOUT_NO_DRAWER);
         if (savedInstanceState == null) {
-            changeFragment(AddLocatieFragment.newInstance());
+            changeFragment(AddLocatieFragment.newInstance(null));
         }
     }
 
@@ -28,4 +28,7 @@ public class AddLocatieActivity extends BaseActivity implements
         admin.addLocatie(attractie);
         finish();
     }
+
+    @Override
+    public void deleteLocatie(Locatie locatie) {}
 }

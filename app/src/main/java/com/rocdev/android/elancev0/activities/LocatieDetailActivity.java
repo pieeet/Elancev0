@@ -3,7 +3,7 @@ package com.rocdev.android.elancev0.activities;
 import android.content.Intent;
 import android.os.Bundle;
 
-import com.rocdev.android.elancev0.fragments.LocatieDetailFragment;
+import com.rocdev.android.elancev0.fragments.AddLocatieFragment;
 import com.rocdev.android.elancev0.models.Locatie;
 
 /**
@@ -12,7 +12,7 @@ import com.rocdev.android.elancev0.models.Locatie;
  */
 
 public class LocatieDetailActivity extends BaseActivity implements
-        LocatieDetailFragment.OnAttractieDetailFragmentInteractionListener {
+        AddLocatieFragment.OnAddAttractieFragmentInteractionListener {
 
 
     @Override
@@ -22,14 +22,14 @@ public class LocatieDetailActivity extends BaseActivity implements
         setContentView(LAYOUT_NO_DRAWER);
         Intent intent = getIntent();
         Locatie locatie = intent.getParcelableExtra(KEY_LOCATIE);
-        changeFragment(LocatieDetailFragment.newInstance(locatie));
+        changeFragment(AddLocatieFragment.newInstance(locatie));
 
 
     }
 
     @Override
-    public void updateLocatie(Locatie attractie) {
-        admin.addLocatie(attractie);
+    public void bewaarLocatie(Locatie locatie) {
+        admin.addLocatie(locatie);
         finish();
     }
 
