@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
@@ -39,7 +40,7 @@ import java.util.List;
  * create an instance of this fragment.
  */
 public class UserDetailFragment extends BaseFragment {
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
+    // the fragment initialization parameters
     private static final String ARG_USER = "user";
 
     private User user;
@@ -79,7 +80,7 @@ public class UserDetailFragment extends BaseFragment {
      * @return A new instance of fragment UserDetailFragment.
      */
     // DONE: Rename and change types and number of parameters
-    public static UserDetailFragment newInstance(User user) {
+    public static UserDetailFragment newInstance(@Nullable User user) {
         UserDetailFragment fragment = new UserDetailFragment();
 
         if (user != null) {
@@ -101,7 +102,12 @@ public class UserDetailFragment extends BaseFragment {
 
     @Override
     public void setTitle() {
-        title = user.getNaam();
+        if (user != null) {
+            title = user.getNaam();
+        } else {
+            title = "Nieuwe gebruiker";
+        }
+
     }
 
     @Override
@@ -111,50 +117,60 @@ public class UserDetailFragment extends BaseFragment {
         this.rootView = rootView;
         if (user != null) {
             setUserListener();
+        } else {
+            initViews(rootView);
         }
         return rootView;
     }
 
     private void initViews(View view) {
         voornaamEditText = (EditText) view.findViewById(R.id.userDetailVoornaamEditText);
-        voornaamEditText.setText(user.getNaam());
         achternaamEditText = (EditText) view.findViewById(R.id.userDetailAchternaamEditText);
-        achternaamEditText.setText(user.getAchternaam());
         emailEditText = (EditText) view.findViewById(R.id.userDetailEmailEditText);
-        emailEditText.setText(user.getEmail());
-        profielFoto = (ImageView) view.findViewById(R.id.userDetailImageView);
-        if (user.getPhotoUrl() != null) {
-            Picasso.with(context).load(user.getPhotoUrl())
-                    .into(profielFoto);
-        } else {
-            profielFoto.setImageDrawable(ContextCompat
-                    .getDrawable(context,
-                            R.drawable.ic_account_circle_black_36dp));
-        }
-
         telefoonEditText = (EditText) view.findViewById(R.id.userDetailTelefoonEditText);
+        TableRow profielfotoTableRow = (TableRow) view.findViewById(R.id.profielfotoTableRow);
         TableRow coachTableRow = (TableRow) view.findViewById(R.id.coachTableRow);
-        if (coach != null) {
-            coachTableRow.setVisibility(View.VISIBLE);
-            EditText coachEditText = (EditText) view.findViewById(R.id.userDetailCoachEditText);
-            coachEditText.setText(coach.getNaam() + " " + coach.getAchternaam());
-        } else {
-            coachTableRow.setVisibility(View.GONE);
-        }
-
-        if (user.getTelefoon() != null) {
-            telefoonEditText.setText(user.getTelefoon());
-        }
-        coacheesGridLayout = (GridLayout) rootView.findViewById(R.id.coacheesCheckBoxLayout);
         isCoachCheckBox = (CheckBox) view.findViewById(R.id.isCoachCheckBox);
-        isCoachCheckBox.setChecked(user.getIsCoach());
         coacheesTitleRow = (TableRow) view.findViewById(R.id.coacheesTitleTableRow);
-        coacheesCheckBoxesRow = (TableRow) view.findViewById(R.id.coacheesCheckBoxesTableRow);
-
-        setCoacheesCheckboxes();
-        verwijderButton = (Button) view.findViewById(R.id.verwijderUserButton);
         updateButton = (Button) view.findViewById(R.id.updateUserButton);
+        verwijderButton = (Button) view.findViewById(R.id.verwijderUserButton);
 
+        if (user != null) {
+            voornaamEditText.setText(user.getNaam());
+            achternaamEditText.setText(user.getAchternaam());
+            emailEditText.setText(user.getEmail());
+            profielFoto = (ImageView) view.findViewById(R.id.userDetailImageView);
+            if (user.getPhotoUrl() != null) {
+                Picasso.with(context).load(user.getPhotoUrl())
+                        .into(profielFoto);
+            } else {
+                profielFoto.setImageDrawable(ContextCompat
+                        .getDrawable(context,
+                                R.drawable.ic_account_circle_black_36dp));
+            }
+            if (coach != null) {
+                coachTableRow.setVisibility(View.VISIBLE);
+                EditText coachEditText = (EditText) view.findViewById(R.id.userDetailCoachEditText);
+                coachEditText.setText(coach.getNaam() + " " + coach.getAchternaam());
+            } else {
+                coachTableRow.setVisibility(View.GONE);
+            }
+            if (user.getTelefoon() != null) {
+                telefoonEditText.setText(user.getTelefoon());
+            }
+            coacheesGridLayout = (GridLayout) rootView.findViewById(R.id.coacheesCheckBoxLayout);
+            isCoachCheckBox.setChecked(user.getIsCoach());
+            coacheesCheckBoxesRow = (TableRow) view.findViewById(R.id.coacheesCheckBoxesTableRow);
+            setCoacheesCheckboxes();
+            updateButton.setText("Update gebruiker");
+
+        } else {
+            verwijderButton.setVisibility(View.GONE);
+            updateButton.setText("Maak gebruiker");
+            coachTableRow.setVisibility(View.GONE);
+            profielfotoTableRow.setVisibility(View.GONE);
+            coacheesTitleRow.setVisibility(View.GONE);
+        }
         initListeners();
     }
 
@@ -190,32 +206,41 @@ public class UserDetailFragment extends BaseFragment {
     }
 
     private void initListeners() {
-        verwijderButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                onDeleteUser(user);
-            }
-        });
+
+        if (user != null) {
+            verwijderButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    onDeleteUser(user);
+                }
+            });
+        }
+
         updateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                ArrayList<User> exCoachees = null;
+                if (user == null) {
+                    user = new User();
+                } else {
+                    if (user.getCoachees() != null) {
+                        exCoachees = new ArrayList<>();
+                        for (int i = 0; i < coacheesCheckBoxes.length; i++) {
+                            if (!coacheesCheckBoxes[i].isChecked()) {
+                                exCoachees.add(coachees.get(i));
+                            }
+                        }
+                    }
+                }
                 user.setNaam(voornaamEditText.getText().toString());
                 user.setAchternaam(achternaamEditText.getText().toString());
                 user.setEmail(emailEditText.getText().toString());
                 user.setTelefoon(telefoonEditText.getText().toString());
                 user.setIsCoach(isCoachCheckBox.isChecked());
-                ArrayList<User> exCoachees = null;
-                if (user.getCoachees() != null) {
-                    exCoachees = new ArrayList<>();
-                    for (int i = 0; i < coacheesCheckBoxes.length; i++) {
-                        if (!coacheesCheckBoxes[i].isChecked()) {
-                            exCoachees.add(coachees.get(i));
-                        }
-
-                    }
-
+                if (mListener != null) {
+                    mListener.onUpdateUser(user, exCoachees);
                 }
-                onUpdateUser(user, exCoachees);
+
             }
         });
         if (coacheesCheckBoxes != null) {
@@ -240,31 +265,33 @@ public class UserDetailFragment extends BaseFragment {
                 });
             }
         }
+        if (profielFoto != null) {
+            profielFoto.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    new AlertDialog.Builder(context)
+                            .setTitle("Profielfoto")
+                            .setMessage("Wil je je profielfoto veranderen of instellen?")
+                            .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int which) {
+                                    String profielUrl = "https://aboutme.google.com/";
+                                    Intent intent = new Intent(Intent.ACTION_VIEW);
+                                    intent.setData(Uri.parse(profielUrl));
+                                    startActivity(intent);
+                                }
+                            })
+                            .setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int which) {
+                                    // do nothing
+                                }
+                            })
+                            .setIcon(android.R.drawable.ic_dialog_alert)
+                            .show();
 
-        profielFoto.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                new AlertDialog.Builder(context)
-                        .setTitle("Profielfoto")
-                        .setMessage("Wil je je profielfoto veranderen of instellen?")
-                        .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int which) {
-                                String profielUrl = "https://aboutme.google.com/";
-                                Intent intent = new Intent(Intent.ACTION_VIEW);
-                                intent.setData(Uri.parse(profielUrl));
-                                startActivity(intent);
-                            }
-                        })
-                        .setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int which) {
-                                // do nothing
-                            }
-                        })
-                        .setIcon(android.R.drawable.ic_dialog_alert)
-                        .show();
+                }
+            });
+        }
 
-            }
-        });
     }
 
 
@@ -274,11 +301,6 @@ public class UserDetailFragment extends BaseFragment {
         }
     }
 
-    private void onUpdateUser(User user, ArrayList<User> exCoachees) {
-        if (mListener != null) {
-            mListener.onUpdateUser(user, exCoachees);
-        }
-    }
 
 
     @Override
@@ -310,8 +332,8 @@ public class UserDetailFragment extends BaseFragment {
      */
     public interface OnUserDetailFragmentInteractionListener {
         void onDeleteUser(User user);
-
         void onUpdateUser(User user, @Nullable List<User> exCoachees);
+        void onUserAdded(User user);
     }
 
     // Deze listener triggert eventueel de overige listeners

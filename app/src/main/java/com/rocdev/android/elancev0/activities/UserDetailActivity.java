@@ -41,7 +41,12 @@ public class UserDetailActivity extends BaseActivity implements
     @Override
     public void onUpdateUser(User user, @Nullable List<User> exCoachees) {
         admin.updateUser(user, exCoachees);
-//        fragmentManager.popBackStack();
+        finish();
+    }
+
+    @Override
+    public void onUserAdded(User user) {
+        admin.addUser(user);
         finish();
     }
 }

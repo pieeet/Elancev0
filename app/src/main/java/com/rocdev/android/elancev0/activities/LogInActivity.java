@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.preference.PreferenceManager;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -16,8 +17,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.rocdev.android.elancev0.R;
-import com.rocdev.android.elancev0.fragments.AddUserFragment;
 import com.rocdev.android.elancev0.fragments.LogInFragment;
+import com.rocdev.android.elancev0.fragments.UserDetailFragment;
 import com.rocdev.android.elancev0.interfaces.Constants;
 import com.rocdev.android.elancev0.models.Admin;
 import com.rocdev.android.elancev0.models.User;
@@ -27,13 +28,14 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.List;
 
 import static com.rocdev.android.elancev0.activities.BaseActivity.coachBevestigd;
 import static com.rocdev.android.elancev0.activities.BaseActivity.mUser;
 
 public class LogInActivity extends AppCompatActivity implements
         LogInFragment.OnLogInFragmentInteractionListener,
-        AddUserFragment.OnAddUserFragmentInterActionListener,
+        UserDetailFragment.OnUserDetailFragmentInteractionListener,
         Constants
 
 {
@@ -90,7 +92,7 @@ public class LogInActivity extends AppCompatActivity implements
                 mUser = user;
                 prefs.edit().putString(KEY_ID, user.get_id()).apply();
                 fragmentManager.beginTransaction().replace(R.id.content_container,
-                        AddUserFragment.newInstance(user)).commit();
+                        UserDetailFragment.newInstance(user)).commit();
             }
 
             @Override
@@ -99,6 +101,12 @@ public class LogInActivity extends AppCompatActivity implements
             }
         });
     }
+
+    @Override
+    public void onDeleteUser(User user) {}
+
+    @Override
+    public void onUpdateUser(User user, @Nullable List<User> exCoachees) {}
 
     // Na inlog altijd invoer of bevestiging van user data
     @Override

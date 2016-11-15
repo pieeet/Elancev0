@@ -6,7 +6,6 @@ import android.support.v4.app.Fragment;
 
 
 import com.rocdev.android.elancev0.R;
-import com.rocdev.android.elancev0.fragments.AddUserFragment;
 import com.rocdev.android.elancev0.fragments.UserDetailFragment;
 import com.rocdev.android.elancev0.fragments.UsersFragment;
 import com.rocdev.android.elancev0.models.User;
@@ -15,12 +14,10 @@ import java.util.List;
 
 public class UsersActivity extends BaseSideNavActivity implements
         UsersFragment.OnFragmentInteractionListener,
-        AddUserFragment.OnAddUserFragmentInterActionListener,
         UserDetailFragment.OnUserDetailFragmentInteractionListener {
 
     private UsersFragment usersFragment;
     private UserDetailFragment userDetailFragment;
-    private AddUserFragment addUserFragment;
     private String fragmentTitle;
 
 
@@ -81,14 +78,14 @@ public class UsersActivity extends BaseSideNavActivity implements
     @Override
     public void onNewUser() {
         if (isTwoPane) {
-            addUserFragment = AddUserFragment.newInstance(null);
+            userDetailFragment = UserDetailFragment.newInstance(null);
             fragmentManager
                     .beginTransaction()
-                    .replace(R.id.content_pane_right, addUserFragment)
+                    .replace(R.id.content_pane_right, userDetailFragment)
                     .addToBackStack(null)
                     .commit();
         } else {
-            startActivity(new Intent(this, AddUserActivity.class));
+            startActivity(new Intent(this, UserDetailActivity.class));
         }
     }
 
@@ -122,7 +119,7 @@ public class UsersActivity extends BaseSideNavActivity implements
 
     @Override
     public void onBackPressed() {
-        if (userDetailFragment != null || addUserFragment != null) {
+        if (userDetailFragment != null ) {
             toolbar.setTitle(fragmentTitle);
         }
         super.onBackPressed();
