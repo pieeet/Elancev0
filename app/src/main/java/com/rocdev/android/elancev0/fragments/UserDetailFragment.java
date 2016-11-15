@@ -3,8 +3,10 @@ package com.rocdev.android.elancev0.fragments;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -19,6 +21,7 @@ import android.widget.EditText;
 import android.widget.GridLayout;
 import android.widget.ImageView;
 import android.widget.TableRow;
+import android.widget.TextView;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -63,6 +66,7 @@ public class UserDetailFragment extends BaseFragment {
     private Button verwijderButton;
     private Button updateButton;
     private ImageView profielFoto;
+    TextView warning;
 
     private ArrayList<User> coachees;
     private User coach;
@@ -134,6 +138,7 @@ public class UserDetailFragment extends BaseFragment {
         coacheesTitleRow = (TableRow) view.findViewById(R.id.coacheesTitleTableRow);
         updateButton = (Button) view.findViewById(R.id.updateUserButton);
         verwijderButton = (Button) view.findViewById(R.id.verwijderUserButton);
+        warning = (TextView) view.findViewById(R.id.userDetailWarning);
 
         if (user != null) {
             voornaamEditText.setText(user.getNaam());
@@ -219,27 +224,60 @@ public class UserDetailFragment extends BaseFragment {
         updateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ArrayList<User> exCoachees = null;
+                boolean newUser = false;
+                ArrayList<String> warnings = new ArrayList<>();
+                String voornaam = voornaamEditText.getText().toString();
+                if (voornaam.equals("")) {
+                    warnings.add("Vul een voornaam in");
+                }
+                String achternaam = achternaamEditText.getText().toString();
+                if (achternaam.equals("")) {
+                    warnings.add("Vul een achternaam in");
+                }
+                String email = emailEditText.getText().toString();
+                if (email.equals("")) {
+                    warnings.add("Vul een email in");
+                }
+                String telefoon = telefoonEditText.getText().toString();
+                boolean isCoach = isCoachCheckBox.isChecked();
                 if (user == null) {
                     user = new User();
-                } else {
-                    if (user.getCoachees() != null) {
-                        exCoachees = new ArrayList<>();
-                        for (int i = 0; i < coacheesCheckBoxes.length; i++) {
-                            if (!coacheesCheckBoxes[i].isChecked()) {
-                                exCoachees.add(coachees.get(i));
+                    newUser = true;
+                }
+                if (warnings.isEmpty()) {
+                    user.setNaam(voornaam);
+                    user.setAchternaam(achternaam);
+                    user.setEmail(email);
+                    user.setTelefoon(telefoon);
+                    user.setIsCoach(isCoach);
+                    SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getActivity());
+                    String woonplaats = prefs.getString(KEY_NAAM_STAD,
+                            DEFAULT_NAAM_STAD);
+                    user.setPlaats(woonplaats);
+                    if (mListener != null) {
+                        if (newUser) {
+                            user.set_id(email.replace('.', '_'));
+                            mListener.onUserAdded(user);
+                        } else {
+                            ArrayList<User> exCoachees = null;
+                            if (user.getCoachees() != null) {
+                                exCoachees = new ArrayList<>();
+                                for (int i = 0; i < coacheesCheckBoxes.length; i++) {
+                                    if (!coacheesCheckBoxes[i].isChecked()) {
+                                        exCoachees.add(coachees.get(i));
+                                    }
+                                }
                             }
+                            mListener.onUpdateUser(user, exCoachees);
                         }
+
                     }
+                } else {
+                    warning.setVisibility(View.VISIBLE);
+//                    for (String warning : warnings) {
+//                    }
                 }
-                user.setNaam(voornaamEditText.getText().toString());
-                user.setAchternaam(achternaamEditText.getText().toString());
-                user.setEmail(emailEditText.getText().toString());
-                user.setTelefoon(telefoonEditText.getText().toString());
-                user.setIsCoach(isCoachCheckBox.isChecked());
-                if (mListener != null) {
-                    mListener.onUpdateUser(user, exCoachees);
-                }
+
 
             }
         });
@@ -291,6 +329,13 @@ public class UserDetailFragment extends BaseFragment {
                 }
             });
         }
+
+        warning.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                warning.setVisibility(View.GONE);
+            }
+        });
 
     }
 
