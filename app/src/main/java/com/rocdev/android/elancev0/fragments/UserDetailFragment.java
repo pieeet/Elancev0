@@ -81,9 +81,12 @@ public class UserDetailFragment extends BaseFragment {
     // DONE: Rename and change types and number of parameters
     public static UserDetailFragment newInstance(User user) {
         UserDetailFragment fragment = new UserDetailFragment();
-        Bundle args = new Bundle();
-        args.putParcelable(ARG_USER, user);
-        fragment.setArguments(args);
+
+        if (user != null) {
+            Bundle args = new Bundle();
+            args.putParcelable(ARG_USER, user);
+            fragment.setArguments(args);
+        }
         return fragment;
     }
 
@@ -106,11 +109,13 @@ public class UserDetailFragment extends BaseFragment {
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_user_detail, container, false);
         this.rootView = rootView;
-        setUserListener();
+        if (user != null) {
+            setUserListener();
+        }
         return rootView;
     }
 
-    private void setViews(View view) {
+    private void initViews(View view) {
         voornaamEditText = (EditText) view.findViewById(R.id.userDetailVoornaamEditText);
         voornaamEditText.setText(user.getNaam());
         achternaamEditText = (EditText) view.findViewById(R.id.userDetailAchternaamEditText);
@@ -327,7 +332,7 @@ public class UserDetailFragment extends BaseFragment {
                         // user heeft geen coachees en geen coach
                         } else {
                             coach = null;
-                            setViews(rootView);
+                            initViews(rootView);
                         }
                     }
                 }
@@ -359,7 +364,7 @@ public class UserDetailFragment extends BaseFragment {
                                 getCoach();
                             // user heeft geen coach
                             } else {
-                                setViews(rootView);
+                                initViews(rootView);
                             }
 
                         }
@@ -381,7 +386,7 @@ public class UserDetailFragment extends BaseFragment {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 coach = dataSnapshot.getValue(User.class);
-                setViews(rootView);
+                initViews(rootView);
             }
 
             @Override
